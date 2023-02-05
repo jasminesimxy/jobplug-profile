@@ -40,7 +40,6 @@ inquirer
 
 
 function managerQuestion () {
-
 const questions = [
 
     {
@@ -65,6 +64,7 @@ const questions = [
         message: ' What is your office number ?',
       },
 ]
+
 inquirer 
 .prompt(questions
 )
@@ -76,48 +76,84 @@ inquirer
 };
 
 function internQuestion () {
-
 const questions = [
 
     {
-        type: 'input',
-        name: 'name',
-        message: 'What is your project name?',
-      },
-      {
-        type: 'input',
-        name: 'description',
-        message: ' Describe your project.',
-      },
-
+      type: 'input',
+      name: 'name',
+      message: 'What is your  name?',
+    },
+    {
+      type: 'input',
+      name: 'id',
+      message: ' What is your ID ?',
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'What is your e-mail?',
+    },
+    { type: 'input',
+      name: 'school',
+      message: 'What school are you attending?',
+    },
+     
 ]
+
+inquirer 
+.prompt(questions
+)
+.then((answers) => {
+    const intern = new Intern (answers.name, answers.id,answers.email, answers.school);
+    allEmployee.push (intern);
+    init();
+  });
 };
+
 
 
 function engineerQuestion () { 
     
-const questions = [
+  const questions = [
 
     {
-        type: 'input',
-        name: 'name',
-        message: 'What is your project name?',
-      },
-      {
-        type: 'input',
-        name: 'description',
-        message: ' Describe your project.',
-      },
-
+      type: 'input',
+      name: 'name',
+      message: 'What is your  name?',
+    },
+    {
+      type: 'input',
+      name: 'id',
+      message: ' What is your ID ?',
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'What is your e-mail?',
+    },
+    { type: 'input',
+      name: 'github',
+      message: 'What is your github username ?',
+    },
+     
 ]
-}; 
+
+inquirer 
+.prompt(questions
+)
+.then((answers) => {
+    const engineer = new Engineer(answers.name, answers.id,answers.email, answers.github);
+    allEmployee.push (engineer);
+    init();
+  });
+};
 
 
 
 function endQuestion () {
-    const readmeContent = generateHTML(allEmployee);
+    const htmlContent = generateHTML(allEmployee);
 
-    fs.writeFile('index.html', readmeContent, (err) =>
+    fs.writeFile('index.html', htmlContent, (err) =>
       err ? console.log(err) : console.log('Successfully created!')
     );
 

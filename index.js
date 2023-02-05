@@ -6,9 +6,9 @@ const allEmployee = [];
 
 const baseQuestion = [
     {
-    type: 'list',
-    name: 'role',
-    message: 'What license does your project have?', choices:
+      type: 'list',
+      name: 'role',
+      message: 'What role ?', choices:
     ['Manager','Intern','Engineer','No']
 }
 ]

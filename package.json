@@ -4,17 +4,16 @@
     "description": "jobplug-profile",
     "main": "index.js",
     "scripts": {
-      "start": "node index",
-      "watch": "nodemon index",
-      "test": "jest"
+        "start": "node index",
+        "watch": "nodemon index",
+        "test": "jest"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "inquirer": "8.2.4"
+        "inquirer": "8.2.4"
     },
     "devDependencies": {
-      "jest": "^24.8.0"
+        "jest": "^24.9.0"
     }
-  }
-  
+}

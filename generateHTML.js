@@ -1,3 +1,7 @@
+function renderLicenseBadge(license) {}
+function renderLicenseLink(license) {}
+function renderLicenseSection(license) {}
+
 function generateManagerCard(employeeArray){
     employeeArray.forEach((employeeObj, index,) => {
         let isManager = employeeObj.getRole() == 'Manager' ? true : false;
@@ -39,11 +43,11 @@ function generateHTML (allEmployee) {
 
         </body>
     </html>
-    `
- };
+    `;
+}
 
 
- module.exports = { generateHTML };
+ module.exports = generateHTML;
 
      //loop over the employee and generate a html
     // return that entire long template literal, i.e. all that html markup with embedded information about the employees
